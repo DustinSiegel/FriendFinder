@@ -133,7 +133,7 @@
 			<div class="container">
 				<h3>Question Eight</h3>
 				<div class="form-group">
-					<label for="questionEight">I warm up on 5.12d.</label><br>
+					<label for="questionEight">I warm up on 5.12d... Average Grade Key: (1) 5.9 and below | (2) 5.10 to 5.11b | (3) 5.11c to 5.12b | (4) 5.12c to 5.13d | (5) 5.14 and up</label><br>
 					<select id="qEightSelector">
 	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
@@ -202,7 +202,7 @@
 
 			<div class="container">
 				<div>
-					<button type="submit" class="btn btn-primary btn-block" id="submitButton">Submit Your Answers</button>
+					<button type="submit" class="btn btn-primary btn-lg btn-block" id="submitButton">Submit Your Answers</button>
 				</div>
 			</div>
 					
@@ -214,7 +214,34 @@
 			</div>
 
  			<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  			<script>
+  			<script type="text/javascript">
+
+  				// function collectClimberData () {
+
+  				// };
+
+  				// fucntion compareResults () {
+
+  				// };
+  				
+  				function displayMatches () {
+  					var currentURL = window.location.origin;
+  					$.ajax({ url: currentURL + "/api/friends", method: "GET" })
+      				.done(function(climberData) {
+      					console.log("------------------------------------");
+        				console.log("URL: " + currentURL + "/api/friends");
+        				console.log("------------------------------------");
+
+        				for (var i = 0; i < climberData.length; i++) {
+        					console.log("--------------------------------");
+        					console.log("Potential matches names: " + climberData[i].name);
+        					console.log("Potential matches photo url: " + climberData[i].photo);
+        					console.log("--------------------------------");
+		        		};
+  					});
+  				};
+  			
+  				displayMatches();
 
   			</script>
 
