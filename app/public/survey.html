@@ -4,7 +4,7 @@
 		<head>
 			<meta charset="utf-8">
 
-			<title>Friend Finder</title>
+			<title>CPMatchS</title>
 
 <!-- Bootstrap Latest compiled and minified CSS -->
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -17,32 +17,32 @@
 		<body>
 			
 			<div class="container">
-				<h2>Friend Connection Survey</h2>
+				<h2>Climbing Preference Survey</h2>
 			</div>
 			<div class="container">
 				<div>
-					<h3>What makes you tick?</h3>
+					<h3>What's your climbing steez?</h3>
 				</div>
 				<div class="form-group">
-					<label for="name">Name (Required):</label><br>
-					<input type="text" id="nameInput">
+	  				<label for="usr">Name (Required):</label>
+	  				<input type="text" class="form-control" id="usr">
 				</div>
 				<div class="form-group">
-					<label for="name">Link to photo image (Required)</label><br>
-					<input type="text" id="nameInput">
+	  				<label for="pwd">Link to photo image (Required):</label>
+	  				<input type="password" class="form-control" id="pwd">
 				</div>
 			</div>
 
 			<div class="container">
 				<h3>Question One</h3>
 				<div class="form-group">
-					<label for="gender">placeholder:</label><br>
-					<select id="genderSelector">
-	    				<option selected value='1'>1 (Strongly Disagree)</option>
+					<label for="questionOne">On climbing days, I like to get an early start.</label><br>
+					<select id="qOneSelector">
+	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option value='5'>5 (Strongly Agree)</option>
+	    				<option selected value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -50,13 +50,13 @@
 			<div class="container">
 				<h3>Question Two</h3>
 				<div class="form-group">
-					<label for="gender">placeholder:</label><br>
-					<select id="genderSelector">
-	    				<option selected value='1'>1 (Strongly Disagree)</option>
+					<label for="questionTwo">When I go climbing, I usually go trad climbing.</label><br>
+					<select id="qTwoSelector">
+	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option value='5'>5 (Strongly Agree)</option>
+	    				<option selected value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -64,13 +64,13 @@
 			<div class="container">
 				<h3>Question Three</h3>
 				<div class="form-group">
-					<label for="gender">placeholder:</label><br>
-					<select id="genderSelector">
-	    				<option selected value='1'>1 (Strongly Disagree)</option>
+					<label for="questionThree">When I climb, its mostly bouldering.</label><br>
+					<select id="qThreeSelector">
+	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option value='5'>5 (Strongly Agree)</option>
+	    				<option selected value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -78,13 +78,13 @@
 			<div class="container">
 				<h3>Question Four</h3>
 				<div class="form-group">
-					<label for="gender">placeholder:</label><br>
-					<select id="genderSelector">
-	    				<option selected value='1'>1 (Strongly Disagree)</option>
+					<label for="questionFour">Most of the time, I go sport climbing.</label><br>
+					<select id="qFourSelector">
+	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option value='5'>5 (Strongly Agree)</option>
+	    				<option selected value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -92,13 +92,13 @@
 			<div class="container">
 				<h3>Question Five</h3>
 				<div class="form-group">
-					<label for="gender">placeholder:</label><br>
-					<select id="genderSelector">
-	    				<option selected value='1'>1 (Strongly Disagree)</option>
+					<label for="questionFive">I prefer to stick to the climbing gym.</label><br>
+					<select id="qFiveSelector">
+	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option value='5'>5 (Strongly Agree)</option>
+	    				<option selected value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -106,39 +106,40 @@
 			<div class="container">
 				<h3>Question Six</h3>
 				<div class="form-group">
-					<label for="gender">placeholder:</label><br>
-					<select id="genderSelector">
-	    				<option selected value='1'>1 (Strongly Disagree)</option>
+					<label for="questionSix">I go climbing at least once a week.</label><br>
+					<select id="qSixSelector">
+	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option value='5'>5 (Strongly Agree)</option>
+	    				<option selected value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
+
 			<div class="container">
 				<h3>Question Seven</h3>
 				<div class="form-group">
-					<label for="gender">placeholder:</label><br>
-					<select id="genderSelector">
-	    				<option selected value='1'>1 (Strongly Disagree)</option>
+					<label for="questionSeven">I like to lead so much, they call me The Rope Gun!</label><br>
+					<select id="qSevenSelector">
+	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option value='5'>5 (Strongly Agree)</option>
+	    				<option selected value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 	    	</div>
 			<div class="container">
 				<h3>Question Eight</h3>
 				<div class="form-group">
-					<label for="gender">placeholder:</label><br>
-					<select id="genderSelector">
-	    				<option selected value='1'>1 (Strongly Disagree)</option>
+					<label for="questionEight">I warm up on 5.12d.</label><br>
+					<select id="qEightSelector">
+	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option value='5'>5 (Strongly Agree)</option>
+	    				<option selected value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -146,13 +147,13 @@
 			<div class="container">
 				<h3>Question Nine</h3>
 				<div class="form-group">
-					<label for="gender">placeholder:</label><br>
-					<select id="genderSelector">
-	    				<option selected value='1'>1 (Strongly Disagree)</option>
+					<label for="questionNine">I usually end up climbing at remote crags that often have long and difficult approches.</label><br>
+					<select id="qNineSelector">
+	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option value='5'>5 (Strongly Agree)</option>
+	    				<option selected value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -160,20 +161,48 @@
 			<div class="container">
 				<h3>Question Ten</h3>
 				<div class="form-group">
-					<label for="gender">placeholder:</label><br>
-					<select id="genderSelector">
+					<label for="questionTen">Safety is my number one priority and I will lead the way in keeping my team protected.</label><br>
+					<select id="qTenSelector">
+	    				<option value='1'>1 (Strongly Disagree)</option>
+	    				<option value='2'>2</option>
+	    				<option value='3'>3</option>
+	    				<option value='4'>4</option>
+	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    			</select>
+	    		</div>
+			</div>
+
+			<div class="container">
+				<h3>Question Eleven</h3>
+				<div class="form-group">
+					<label for="questionEleven">I have every piece of gear that we will need.</label><br>
+					<select id="qElevenSelector">
+	    				<option value='1'>1 (Strongly Disagree)</option>
+	    				<option value='2'>2</option>
+	    				<option value='3'>3</option>
+	    				<option value='4'>4</option>
+	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    			</select>
+	    		</div>
+			</div>
+
+			<div class="container">
+				<h3>Question Twelve</h3>
+				<div class="form-group">
+					<label for="questionTwelve">I like to celebrate with a beer or a smoke after a hard climb.</label><br>
+					<select id="qTwelveSelector">
 	    				<option selected value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option value='5'>5 (Strongly Agree)</option>
+	    				<option selected value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
 
 			<div class="container">
 				<div>
-					<button type="submit" class="btn btn-default" id="submitButton">Submit Your Answers</button>
+					<button type="submit" class="btn btn-primary btn-block" id="submitButton">Submit Your Answers</button>
 				</div>
 			</div>
 					
