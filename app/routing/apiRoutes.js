@@ -12,6 +12,7 @@ module.exports = function(app) {
 // Takes in user input data, converts it to json and posts it to the array  ==============================================
 	app.post("/api/friends", function(req, res) {
 		climberData.push(req.body);
+		res.json(true);
 		console.log(climberData);
 	});
 };

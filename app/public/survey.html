@@ -9,6 +9,8 @@
 		  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+       	 	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
 		</head>
 
@@ -19,15 +21,15 @@
 			</div>
 			<div class="container">
 				<div>
-					<h3>What's your climbing steez?</h3>
+					<h3>What kind of climber are you?</h3>
 				</div>
 				<div class="form-group">
 	  				<label for="usr">Name (Required):</label>
 	  				<input type="text" class="form-control" id="usr">
 				</div>
 				<div class="form-group">
-	  				<label for="pwd">Link to photo image (Required):</label>
-	  				<input type="password" class="form-control" id="pwd">
+	  				<label for="photo">Link to photo image (Required):</label>
+	  				<input type="text" class="form-control" id="photo">
 				</div>
 			</div>
 
@@ -35,12 +37,12 @@
 				<h3>Question One</h3>
 				<div class="form-group">
 					<label for="questionOne"><h4>On climbing days, I like to get an early start.</h4></label><br>
-					<select id="qOneSelector">
+					<select data-placeholder="Pick a number" class="chosen-select" id="qOneSelector">
 	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    				<option value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -49,12 +51,12 @@
 				<h3>Question Two</h3>
 				<div class="form-group">
 					<label for="questionTwo"><h4>When I go climbing, I usually go trad climbing.</h4></label><br>
-					<select id="qTwoSelector">
+					<select data-placeholder="Pick how much you agree" class="chosen-select" id="qTwoSelector">
 	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    				<option value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -63,12 +65,12 @@
 				<h3>Question Three</h3>
 				<div class="form-group">
 					<label for="questionThree"><h4>When I climb, its mostly bouldering.</h4></label><br>
-					<select id="qThreeSelector">
+					<select data-placeholder="Pick how much you agree" class="chosen-select" id="qThreeSelector">
 	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    				<option value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -77,12 +79,12 @@
 				<h3>Question Four</h3>
 				<div class="form-group">
 					<label for="questionFour"><h4>Most of the time, I go sport climbing.</h4></label><br>
-					<select id="qFourSelector">
+					<select data-placeholder="Pick how much you agree" class="chosen-select" id="qFourSelector">
 	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    				<option value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -91,12 +93,12 @@
 				<h3>Question Five</h3>
 				<div class="form-group">
 					<label for="questionFive"><h4>I prefer to stick to the climbing gym.</h4></label><br>
-					<select id="qFiveSelector">
+					<select data-placeholder="Pick how much you agree" class="chosen-select" id="qFiveSelector">
 	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    				<option value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -105,12 +107,12 @@
 				<h3>Question Six</h3>
 				<div class="form-group">
 					<label for="questionSix"><h4>I go climbing at least once a week.</h4></label><br>
-					<select id="qSixSelector">
+					<select data-placeholder="Pick how much you agree" class="chosen-select" id="qSixSelector">
 	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    				<option value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -119,12 +121,12 @@
 				<h3>Question Seven</h3>
 				<div class="form-group">
 					<label for="questionSeven"><h4>I like to lead so much, they call me The Rope Gun!</h4></label><br>
-					<select id="qSevenSelector">
+					<select data-placeholder="Pick how much you agree" class="chosen-select" id="qSevenSelector">
 	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    				<option value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 	    	</div>
@@ -132,12 +134,12 @@
 				<h3>Question Eight</h3>
 				<div class="form-group">
 					<label for="questionEight"><h4>I warm up on 5.12d... Average Grade Key: (1) 5.9 and below | (2) 5.10 to 5.11b | (3) 5.11c to 5.12b | (4) 5.12c to 5.13d | (5) 5.14 and up</h4></label><br>
-					<select id="qEightSelector">
+					<select data-placeholder="Pick how much you agree" class="chosen-select" id="qEightSelector">
 	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    				<option value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -146,12 +148,12 @@
 				<h3>Question Nine</h3>
 				<div class="form-group">
 					<label for="questionNine"><h4>I usually end up climbing at remote crags that often have long and difficult approches.</h4></label><br>
-					<select id="qNineSelector">
+					<select data-placeholder="Pick how much you agree" class="chosen-select" id="qNineSelector">
 	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    				<option value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -160,12 +162,12 @@
 				<h3>Question Ten</h3>
 				<div class="form-group">
 					<label for="questionTen"><h4>Safety is my number one priority and I will lead the way in keeping my team protected.</h4></label><br>
-					<select id="qTenSelector">
+					<select data-placeholder="Pick how much you agree" class="chosen-select" id="qTenSelector">
 	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    				<option value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -174,12 +176,12 @@
 				<h3>Question Eleven</h3>
 				<div class="form-group">
 					<label for="questionEleven"><h4>I have every piece of gear that we will need.</h4></label><br>
-					<select id="qElevenSelector">
+					<select data-placeholder="Pick how much you agree" class="chosen-select" id="qElevenSelector">
 	    				<option value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    				<option value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
@@ -188,47 +190,48 @@
 				<h3>Question Twelve</h3>
 				<div class="form-group">
 					<label for="questionTwelve"><h4>I like to celebrate with a beer or a smoke after a hard climb.</h4></label><br>
-					<select id="qTwelveSelector">
+					<select data-placeholder="Pick how much you agree" class="chosen-select" id="qTwelveSelector">
 	    				<option selected value='1'>1 (Strongly Disagree)</option>
 	    				<option value='2'>2</option>
 	    				<option value='3'>3</option>
 	    				<option value='4'>4</option>
-	    				<option selected value='5'>5 (Strongly Agree)</option>
+	    				<option value='5'>5 (Strongly Agree)</option>
 	    			</select>
 	    		</div>
 			</div>
 
 			<div class="container">
 			<!-- Trigger the modal with a button -->
-			  	<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#myModal">Submit Your Prefrences</button>
+			  	<button type="submit" class="btn btn-primary btn-lg btn-block" id="submitButton">
+                <i class="fa fa-check-circle" aria-hidden="true"></i>Submit Your Prefrences</button>
+			
 			<!-- Modal -->
-			  	<div class="modal fade" id="myModal" role="dialog">
-			    	<div class="modal-dialog">
-			    
-			      <!-- Modal content-->
-			      		<div class="modal-content">
-					        <div class="modal-header">
-					          	<button type="button" class="close" data-dismiss="modal">&times;</button>
-					          	<h4 class="modal-title">Your New Climbing Partner!</h4>
-					        </div>
-			        		<div class="modal-body">
-			          			<div>
-			          				<span id="yourPartner"></span>
+			        <div id="resultsModal" class="modal fade" role="dialog">
+			            <div class="modal-dialog">
+			                <!-- Modal content-->
+			                <div class="modal-content">
+			                    <div class="modal-header">
+			                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			                        <h2 class="modal-title">
+			                            <strong>Your new climbing partner!</strong>
+			                        </h2>
+			                    </div>
+			                    <div class="modal-body">
+			                        <h2 id="partnerName"></h2>
+			          				<img id="partnerPhoto" src="https://drive.google.com/open?id=0B5WxQUw0pX3WTDFhUmw0bG1PbzA">
 			          			</div>
 			        		</div>
 			        		<div class="modal-footer">
 			          			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			        		</div>
-			      		</div>
-			      
+			      		</div>			      
 			    	</div>
-			  	</div>
-			  
+			  	</div>			  
 			</div>
 			
 			<div class="container">
 				<div>
-					<a href="#" class="aPIs">FriendsAPI</a>
+					<a href="/api/friends" class="aPIs">FriendsAPI</a>
 					<a href="https://github.com/DustinSiegel/FriendFinder" class="gitHubLink">GitHubRepo</a>
 				</div>
 			</div>
@@ -236,18 +239,84 @@
  
   			<script type="text/javascript">
 
+// Chosen CSS for selectors ==============================================================================================
+			  	var config = {
+			      	'.chosen-select'           : {},
+			      	'.chosen-select-deselect'  : {allow_single_deselect:true},
+			      	'.chosen-select-no-single' : {disable_search_threshold:10},
+			      	'.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+			      	'.chosen-select-width'     : {width:"95%"}
+			    }
+			    for (var selector in config) {
+			      	$(selector).chosen(config[selector]);
+			    };
 
+// Perform action when the submit butten is pressed =======================================================================
+  			  	$("#submitButton").on("click", function() {
+      				collectClimberData();
+      			});
 
-  				// function collectClimberData () {
+// Collect user input and build into an object and push to friends api ====================================================
+				function collectClimberData () {
+					
+// Ensure that the fields are filled out ==================================================================================
+					var formComplete = true;
+		  				
+	  				$('.form-control').each(function() {
+	    				if ( $(this).val() === '' )
+	        			formComplete= false;
+	  				});
+	  				
+	  				$('.chosen-select').each(function() {
+	  					if( $(this).val() === "")
+	  					formComplete = false
+	  				});
+	  				return formComplete;
 
+					if (collectClimberData() == true) {
+				
+// Build an object from user input =========================================================================================
+	  					var climberData = {
+	   						customerName: $("#usr").val(),
+	    					photo: $("#photo").val(),
+	    					qOneSelector: $("#qOneSelector").val(),
+	    					qTwoSelector: $("#qTwoSelector").val(),
+	    					qThreeSelector: $("#qThreeSelector").val(),
+	    					qFourSelector: $("#qFourSelector").val(),
+	    					qFiveSelector: $("#qFiveSelector").val(),
+	    					qSixSelector: $("#qSixSelector").val(),
+	    					qSevenSelector: $("#qSevenSelector").val(),
+	    					qEightSelector: $("#qEightelector").val(),
+	    					qNineSelector: $("#qNineSelector").val(),
+	    					qTenSelector: $("#qTenSelector").val(),
+	    					qElevenSelector: $("#qElevenSelector").val(),
+	    					qTwelveSelector: $("#qTwelveSelector").val(),
+	  					};
+	  				};
+  					console.log(climberData);
+  					displayMatches();
+  				};
+
+  				// 	$.post("/api/friends", climberData, function(data) {
+
+      //     				if (data) {
+      //       				alert("Climber Data Submited!");
+      //     				}
+      //     				else {
+      //       				alert("Sorry, please complete the survey first!");
+      //     				}
+
+      //   			});
+      //   			compareResults();
   				// };
 
-  				// fucntion compareResults () {
-
+  				// function compareResults () {
+  				// 	displayMatches();
   				// };
+
+
   				
   				function displayMatches () {
-
 
   					var currentURL = window.location.origin;
   					$.ajax({ url: currentURL + "/api/friends", method: "GET" })
@@ -255,8 +324,11 @@
       					console.log("------------------------------------");
         				console.log("URL: " + currentURL + "/api/friends");
         				console.log("------------------------------------");
+        				$("#resultsModal").modal('toggle');
 
         				for (var i = 0; i < climberData.length; i++) {
+        					$("#partnerName").text(climberData[i].name);
+        					$("#partnerPhoto").append('src="' + climberData[i].photo + '" style="width:100px;height:100px;');
         					console.log("--------------------------------");
         					console.log("Potential matches names: " + climberData[i].name);
         					console.log("Potential matches photo url: " + climberData[i].photo);
@@ -264,8 +336,6 @@
 		        		};
   					});
   				};
-  			
-  				displayMatches();
 
   			</script>
 
