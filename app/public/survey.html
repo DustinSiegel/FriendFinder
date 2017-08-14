@@ -222,7 +222,7 @@
 			          			</div>
 			        		</div>
 			        		<div class="modal-footer">
-			          			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			          			<!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
 			        		</div>
 			      		</div>			      
 			    	</div>
@@ -236,7 +236,6 @@
 				</div>
 			</div>
 
- 
   			<script type="text/javascript">
 
 // Chosen CSS for selectors ==============================================================================================
@@ -254,26 +253,27 @@
 // Perform action when the submit butten is pressed =======================================================================
   			  	$("#submitButton").on("click", function() {
       				collectClimberData();
+      				// displayMatches();
       			});
 
 // Collect user input and build into an object and push to friends api ====================================================
 				function collectClimberData () {
 					
 // Ensure that the fields are filled out ==================================================================================
-					var formComplete = true;
+					// var formComplete = true;
 		  				
-	  				$('.form-control').each(function() {
-	    				if ( $(this).val() === '' )
-	        			formComplete= false;
-	  				});
+	  		// 		$('.form-control').each(function() {
+	    // 				if ( $(this).val() === '' )
+	    //     			formComplete = false;
+	  		// 		});
 	  				
-	  				$('.chosen-select').each(function() {
-	  					if( $(this).val() === "")
-	  					formComplete = false
-	  				});
-	  				return formComplete;
+	  		// 		$('.chosen-select').each(function() {
+	  		// 			if( $(this).val() === "")
+	  		// 			formComplete = false
+	  		// 		});
+	  		// 		return formComplete;
 
-					if (collectClimberData() == true) {
+					// if (fromComplete = true) {
 				
 // Build an object from user input =========================================================================================
 	  					var climberData = {
@@ -292,10 +292,10 @@
 	    					qElevenSelector: $("#qElevenSelector").val(),
 	    					qTwelveSelector: $("#qTwelveSelector").val(),
 	  					};
-	  				};
-  					console.log(climberData);
+	  			// 	};
+  				// 	console.log(climberData.customerName);
   					displayMatches();
-  				};
+  				// };
 
   				// 	$.post("/api/friends", climberData, function(data) {
 
@@ -307,16 +307,12 @@
       //     				}
 
       //   			});
-      //   			compareResults();
-  				// };
-
-  				// function compareResults () {
-  				// 	displayMatches();
-  				// };
+  				};
 
 
   				
   				function displayMatches () {
+  					alert("button Pressed ...")
 
   					var currentURL = window.location.origin;
   					$.ajax({ url: currentURL + "/api/friends", method: "GET" })
@@ -324,7 +320,6 @@
       					console.log("------------------------------------");
         				console.log("URL: " + currentURL + "/api/friends");
         				console.log("------------------------------------");
-        				$("#resultsModal").modal('toggle');
 
         				for (var i = 0; i < climberData.length; i++) {
         					$("#partnerName").text(climberData[i].name);
@@ -334,6 +329,7 @@
         					console.log("Potential matches photo url: " + climberData[i].photo);
         					console.log("--------------------------------");
 		        		};
+		        		$("#resultsModal").modal('toggle');
   					});
   				};
 
