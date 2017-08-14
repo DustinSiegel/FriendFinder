@@ -23,14 +23,16 @@
 				<div>
 					<h3>What kind of climber are you?</h3>
 				</div>
-				<div class="form-group">
-	  				<label for="usr">Name (Required):</label>
-	  				<input type="text" class="form-control" id="usr">
-				</div>
-				<div class="form-group">
-	  				<label for="photo">Link to photo image (Required):</label>
-	  				<input type="text" class="form-control" id="photo">
-				</div>
+				<form>
+					<div class="form-group">
+	  					<label for="name">Name (Required):</label>
+	  					<input type="text" class="form-control" id="name">
+					</div>
+					<div class="form-group">
+	  					<label for="photo">Link to photo image (Required):</label>
+	  					<input type="text" class="form-control" id="photo">
+					</div>
+				</form>
 			</div>
 
 			<div class="container">
@@ -218,7 +220,7 @@
 			                    </div>
 			                    <div class="modal-body">
 			                        <h2 id="partnerName"></h2>
-			          				<img id="partnerPhoto" src="https://drive.google.com/open?id=0B5WxQUw0pX3WTDFhUmw0bG1PbzA">
+			          				<h5 id="partnerPhoto"></h5>
 			          			</div>
 			        		</div>
 			        		<div class="modal-footer">
@@ -258,59 +260,53 @@
 
 // Collect user input and build into an object and push to friends api ====================================================
 				function collectClimberData () {
-					
+
+// Build an object from user input =========================================================================================
+					var climberData = {
+						name: $("#name").val(),
+						photo: $("#photo").val(),
+						qOneSelector: $("#qOneSelector").val(),
+						qTwoSelector: $("#qTwoSelector").val(),
+						qThreeSelector: $("#qThreeSelector").val(),
+						qFourSelector: $("#qFourSelector").val(),
+						qFiveSelector: $("#qFiveSelector").val(),
+						qSixSelector: $("#qSixSelector").val(),
+						qSevenSelector: $("#qSevenSelector").val(),
+						qEightSelector: $("#qEightelector").val(),
+						qNineSelector: $("#qNineSelector").val(),
+						qTenSelector: $("#qTenSelector").val(),
+						qElevenSelector: $("#qElevenSelector").val(),
+						qTwelveSelector: $("#qTwelveSelector").val(),
+					};
+
 // Ensure that the fields are filled out ==================================================================================
 					// var formComplete = true;
 		  				
-	  		// 		$('.form-control').each(function() {
-	    // 				if ( $(this).val() === '' )
+	  		// 		$(".form-control").each(function() {
+	    // 				if ( $(this).val() === "" )
 	    //     			formComplete = false;
 	  		// 		});
 	  				
-	  		// 		$('.chosen-select').each(function() {
+	  		// 		$(".chosen-select").each(function() {
 	  		// 			if( $(this).val() === "")
 	  		// 			formComplete = false
 	  		// 		});
 	  		// 		return formComplete;
 
 					// if (fromComplete = true) {
-				
-// Build an object from user input =========================================================================================
-	  					var climberData = {
-	   						customerName: $("#usr").val(),
-	    					photo: $("#photo").val(),
-	    					qOneSelector: $("#qOneSelector").val(),
-	    					qTwoSelector: $("#qTwoSelector").val(),
-	    					qThreeSelector: $("#qThreeSelector").val(),
-	    					qFourSelector: $("#qFourSelector").val(),
-	    					qFiveSelector: $("#qFiveSelector").val(),
-	    					qSixSelector: $("#qSixSelector").val(),
-	    					qSevenSelector: $("#qSevenSelector").val(),
-	    					qEightSelector: $("#qEightelector").val(),
-	    					qNineSelector: $("#qNineSelector").val(),
-	    					qTenSelector: $("#qTenSelector").val(),
-	    					qElevenSelector: $("#qElevenSelector").val(),
-	    					qTwelveSelector: $("#qTwelveSelector").val(),
-	  					};
-	  			// 	};
-  				// 	console.log(climberData.customerName);
-  					displayMatches();
-  				// };
 
-  				// 	$.post("/api/friends", climberData, function(data) {
+					$.post("/api/friends", climberData, function(data) {
 
-      //     				if (data) {
-      //       				alert("Climber Data Submited!");
-      //     				}
-      //     				else {
-      //       				alert("Sorry, please complete the survey first!");
-      //     				}
+  						if (data) {
+    						alert("Climber Data Submited!");
+    						displayMatches();
+  						} else {
+    					alert("Sorry, please complete the survey first!");
+  						}
 
-      //   			});
-  				};
+					});
+				};
 
-
-  				
   				function displayMatches () {
   					alert("button Pressed ...")
 
@@ -323,7 +319,7 @@
 
         				for (var i = 0; i < climberData.length; i++) {
         					$("#partnerName").text(climberData[i].name);
-        					$("#partnerPhoto").append('src="' + climberData[i].photo + '" style="width:100px;height:100px;');
+        					$("#partnerPhoto").text(climberData[i].photo);
         					console.log("--------------------------------");
         					console.log("Potential matches names: " + climberData[i].name);
         					console.log("Potential matches photo url: " + climberData[i].photo);
