@@ -299,7 +299,7 @@
 
   						if (data) {
     						alert("Climber Data Submited!");
-    						displayMatches();
+    						compareResults();
   						} else {
     					alert("Sorry, please complete the survey first!");
   						}
@@ -307,8 +307,11 @@
 					});
 				};
 
+				function compareResults() {
+					displayMatches();
+				};
+
   				function displayMatches () {
-  					alert("button Pressed ...")
 
   					var currentURL = window.location.origin;
   					$.ajax({ url: currentURL + "/api/friends", method: "GET" })
