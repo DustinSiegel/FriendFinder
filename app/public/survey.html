@@ -280,36 +280,33 @@
 					};
 
 // Ensure that the fields are filled out ==================================================================================
-					// var formComplete = true;
+					var formComplete = true;
 		  				
-	  		// 		$(".form-control").each(function() {
-	    // 				if ( $(this).val() === "" )
-	    //     			formComplete = false;
-	  		// 		});
+	  				$(".form-control").each(function() {
+	    				if ( $(this).val() === "" ) {
+	        				formComplete = false;
+	        				alert("Sorry, please complete the survey first!");
+	        			};
+	  				});
 	  				
-	  		// 		$(".chosen-select").each(function() {
-	  		// 			if( $(this).val() === "")
-	  		// 			formComplete = false
-	  		// 		});
-	  		// 		return formComplete;
+	  				$(".chosen-select").each(function() {
+	  					if( $(this).val() === "") {
+	  						formComplete = false
+	  						alert("Sorry, please complete the survey first!");
+	  					};
+	  				});
+	  				// return formComplete;
 
-					// if (fromComplete = true) {
-
-					$.post("/api/friends", climberData, function(data) {
-
-  						if (data) {
+					if (formComplete = true) {
+						$.post("/api/friends", climberData, function(data) {
     						alert("Climber Data Submited!");
     						compareResults();
-  						} else {
-    					alert("Sorry, please complete the survey first!");
-  						}
-
-					});
+ 						});
+    					
+					};
 				};
 
 				function compareResults() {
-					// var newClimber = [];
-					// var allClimbers = [];
 
 					displayMatches();
 				};
