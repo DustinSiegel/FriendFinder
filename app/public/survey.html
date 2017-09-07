@@ -9,8 +9,6 @@
 		  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
-       	 	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
 		</head>
 
@@ -240,78 +238,65 @@
 
   			<script type="text/javascript">
 
-// Chosen CSS for selectors ==============================================================================================
-			  	var config = {
-			      	'.chosen-select'           : {},
-			      	'.chosen-select-deselect'  : {allow_single_deselect:true},
-			      	'.chosen-select-no-single' : {disable_search_threshold:10},
-			      	'.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
-			      	'.chosen-select-width'     : {width:"95%"}
-			    }
-			    for (var selector in config) {
-			      	$(selector).chosen(config[selector]);
-			    };
-
 // Perform action when the submit butten is pressed =======================================================================
   			  	$("#submitButton").on("click", function() {
       				collectClimberData();
-      				// displayMatches();
       			});
 
 // Collect user input and build into an object and push to friends api ====================================================
 				function collectClimberData () {
 
-// Build an object from user input =========================================================================================
-					var climberData = {
-						name: $("#name").val(),
-						photo: $("#photo").val(),
-						qOneSelector: $("#qOneSelector").val(),
-						qTwoSelector: $("#qTwoSelector").val(),
-						qThreeSelector: $("#qThreeSelector").val(),
-						qFourSelector: $("#qFourSelector").val(),
-						qFiveSelector: $("#qFiveSelector").val(),
-						qSixSelector: $("#qSixSelector").val(),
-						qSevenSelector: $("#qSevenSelector").val(),
-						qEightSelector: $("#qEightelector").val(),
-						qNineSelector: $("#qNineSelector").val(),
-						qTenSelector: $("#qTenSelector").val(),
-						qElevenSelector: $("#qElevenSelector").val(),
-						qTwelveSelector: $("#qTwelveSelector").val(),
-					};
-
 // Ensure that the fields are filled out ==================================================================================
 					var formComplete = true;
 		  				
 	  				$(".form-control").each(function() {
-	    				if ( $(this).val() === "" ) {
+	    				if ( $(this).val() === "") {
 	        				formComplete = false;
-	        				alert("Sorry, please complete the survey first!");
+	        				return formComplete;
 	        			};
 	  				});
 	  				
 	  				$(".chosen-select").each(function() {
 	  					if( $(this).val() === "") {
 	  						formComplete = false
-	  						alert("Sorry, please complete the survey first!");
+	  						return formComplete;
 	  					};
 	  				});
-	  				// return formComplete;
 
+// Build an object from user input =========================================================================================
 					if (formComplete = true) {
+
+	 					var climberData = {
+							name: $("#name").val(),
+							photo: $("#photo").val(),
+							scores: [
+								$("#qOneSelector").val(),
+								$("#qTwoSelector").val(),
+								$("#qThreeSelector").val(),
+								$("#qFourSelector").val(),
+								$("#qFiveSelector").val(),
+								$("#qSixSelector").val(),
+								$("#qSevenSelector").val(),
+								$("#qEightSelector").val(),
+								$("#qNineSelector").val(),
+								$("#qTenSelector").val(),
+								$("#qElevenSelector").val(),
+								$("#qTwelveSelector").val()
+							]
+						};
+
+// Post the new climber object to the friends api ===========================================================================
 						$.post("/api/friends", climberData, function(data) {
-    						alert("Climber Data Submited!");
-    						compareResults();
- 						});
-    					
+							alert("Climber Data Submited!");
+    						compareResults(); 
+    					}); 					
+					
+					} else {
+						alert("Please complete the form before submitting!");
 					};
 				};
 
 				function compareResults() {
-
-					displayMatches();
-				};
-
-  				function displayMatches () {
 
   					var currentURL = window.location.origin;
   					$.ajax({ url: currentURL + "/api/friends", method: "GET" })
