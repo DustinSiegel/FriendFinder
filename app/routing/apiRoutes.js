@@ -12,57 +12,69 @@ module.exports = function(app) {
 
 // Takes in user input data, converts it to json and posts it to the array  ==============================================
 	app.post("/api/friends", function(req, res) {
-		console.log(req.body, "req.body");
+		console.log("req.body", req.body);
+		console.log("ClimberData", climberData);
+
 // Compare the user input to the existing profiles to find the best match ================================================		
-// Not yet working !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!		
-		var bestMatch = {
-		name: "",
-		photo: "",
-		friendDifference: Infinity
-	};
-		//create an empty variable for matches
+
+// Variables for the data from the user input and another variable for just the scores from that data ====================
 		var userData = req.body;
-		var userScores = userData.scores;
-		var climberDataScores = climberData[0].scores;
-		var scoreDifference = [];
-		var resultsArray = [];
-		// var finalUserScores = parseInt(userScores);
+		var currentClimberScores = userData.scores;
 
-		for (var i = 0; i < userScores.length; i++) {
-			scoreDifference.push( climberDataScores[i] - userScores[parseInt(i)]);
-		}
-		console.log("Score Difference", scoreDifference);
-		resultsArray = scoreDifference.reduce(function (a,b) {
-			return a + b
-		}, 0);
+// A variable that takes the data from the friends.js and puts it into an array and seperates out the scores =============	
+		var allClimberScores = climberData.map(function(currentClimber) {
+			return currentClimber.scores;
+		});
 
+// A variable that takes the array of climber scores and compares it to the array of scores ==============================
+// from the user and puts the value of the difference between the two into a third array =================================
+		var allDifferences = allClimberScores.map(function(otherClimberScores) {
+			return getClimberScoreDifference(currentClimberScores, otherClimberScores)
+		});
 
-		// console.log("ClimberData", climberData);
-		// console.log("User Data Scores", userData.scores);
-		// console.log("ClimberDataScores", climberDataScores);
-		// console.log("userScores", userScores);
-		// console.log("finalUserScores", finalUserScores);
-		console.log(resultsArray);
-		return resultsArray;
+// A varaible that takes the array of the difference in scores between the user and all climbers and reduces each set ====
+// to a single number by adding them together ============================================================================ 
+		var collapsedDifferences = allDifferences.map(function(currentDifferenceScores) {
+			return currentDifferenceScores.reduce(function(accumulator, currentScore) {
+				return accumulator + currentScore;
+			}, 0);
+			
+		});
 
+// A varaible that takes the reduced numbers variable and makes them positive numbers ===================================
+		var absoluteDifferences = collapsedDifferences.map(function(currentDifference) {
+			return Math.abs(currentDifference);
+		});
 
+		// Calculate the minimum difference - the id of this score corresponds to the matched climber!
 
+		
+		console.log("allClimberScores: ", allClimberScores);
+		console.log("allDifferences:", allDifferences);
+		console.log('collapsedDifferences:', collapsedDifferences);
+		console.log("abosoluteDifferences:", absoluteDifferences);
 
+		// var resultsArray = [];
+		// resultsArray = climberDifferenceScores.reduce(function (accumulator, currentItem) {
+		// 	return accumulator + currentItem;
+		// }, 0);
 
+		// console.log("Difference value:", resultsArray);
+		// return resultsArray;
 
-
-	// // 	//create a forloop  that loops through the new user array and compares to the total data array.
-	// 	alert(userData);
-	// 	alert(userScores);
-	// 	//calcuate the difference 
-	// 	totalDifference <= Math.abs(parsInt) //the rest of it too.
-
-
-		// find the least differeces and then push to html
-
-
-//this part is definitly working.
+		// Push the result back to the modal ====================================================================================
 		climberData.push(req.body);
 		res.json(true);
+
+		function getClimberScoreDifference(climberOneScores, climberTwoScores) {
+			var scoreDifferences = [];
+
+			for (var i = 0; i < climberOneScores.length; i++) {
+				var currentDifference = climberOneScores[i] - climberTwoScores[i];
+				scoreDifferences.push(currentDifference);
+			}
+			console.log("scoreDifferences:", scoreDifferences);
+			return scoreDifferences;
+		}
 	});
 };
