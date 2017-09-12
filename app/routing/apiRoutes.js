@@ -57,7 +57,7 @@ module.exports = function(app) {
 		console.log("Match:", climberData[mostCompatableArrayPosition]);
 
 // Push the result back to the modal ===========================================================================================
-		climberData.push(req.body);
+		climberData.push(climberData[mostCompatableArrayPosition]);
 		res.json(true);
 
 // A function that does the work of comparing the climber scores and producing an array of the difference between each answer ===
