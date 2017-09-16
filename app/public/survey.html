@@ -288,6 +288,9 @@
 // Post the new climber object to the friends api ===========================================================================
 						$.post("/api/friends", climberData, function(data) {
 							alert("Climber Data Submited!");
+							console.log("-----------------------");
+							console.log("New Climber:", climberData);
+							console.log("-----------------------");
     						compareResults(); 
     					}); 					
 					

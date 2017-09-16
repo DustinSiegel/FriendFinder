@@ -57,6 +57,7 @@ module.exports = function(app) {
 		console.log("Match:", climberData[mostCompatableArrayPosition]);
 
 // Push the result back to the modal ===========================================================================================
+		climberData.push(userData);
 		climberData.push(climberData[mostCompatableArrayPosition]);
 		res.json(true);
 
